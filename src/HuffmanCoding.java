@@ -1,5 +1,4 @@
 import java.io.*;
-import java.nio.file.Files;
 import java.util.*;
 
 
@@ -26,7 +25,17 @@ public class HuffmanCoding {
     buildCode(root.right, code + "1", map);
   }
   public static void main(String[] args) throws IOException{
-    String text = new String(Files.readAllBytes(new File("C:/Users/jakeb/OneDrive/Documents/GitHub/Huffman/src/hoffman_input(1).txt").toPath()));
+    File file = new File("hoffman_input.txt");
+    BufferedReader br = new BufferedReader(new FileReader(file));
+
+    StringBuilder sb = new StringBuilder();
+    String line;
+    while ((line = br.readLine()) != null) {
+      sb.append(line).append("\n");
+    }
+    br.close();
+
+    String text = sb.toString();
 
     Map<Character, Integer> freq = new HashMap<>();
     for (char c : text.toCharArray()) freq.put(c, freq.getOrDefault(c,0) + 1);
