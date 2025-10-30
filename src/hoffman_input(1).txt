@@ -1,0 +1,32 @@
+In computer science and information theory, Huffman coding is an algorithm used for lossless data compression. 
+The idea is to assign variable-length codes to input characters, with shorter codes assigned to more frequent characters.
+
+Huffman coding is based on the frequency of occurrence of a data item.
+
+The method was developed by David A. Huffman while he was a Sc.D. student at MIT, and was published in the 1952 paper “A Method for the Construction of Minimum-Redundancy Codes.”
+
+In practice, Huffman coding is widely used in applications such as file compression formats (like ZIP and GZIP), image formats (like JPEG), and network protocols (such as HTTP/2).
+
+The algorithm constructs a binary tree of nodes, where each leaf node corresponds to a symbol from the input data and its frequency of occurrence.
+
+The two nodes with the lowest frequency are combined to form a new node, whose frequency is the sum of the two.
+
+This process repeats until only one node remains — the root of the Huffman tree.
+
+By traversing the Huffman tree from root to leaves, each symbol is assigned a unique binary code.
+
+This property guarantees that no code is a prefix of another, making the set of codes prefix-free.
+
+The encoded data can thus be unambiguously decoded by following the binary tree structure.
+
+Huffman coding achieves optimal compression for a given set of symbol frequencies under the assumption of independent symbols.
+
+To test Huffman coding implementations, it is important to use a dataset that includes both frequent and rare characters, numbers, punctuation marks, and varying amounts of whitespace.
+
+This ensures that the Huffman tree contains both shallow and deep branches, testing your code’s recursive traversal and prefix handling.
+
+The effectiveness of the algorithm can be measured by comparing the number of bits required before and after encoding, calculating the compression ratio.
+
+For instance, if your original text file is 12,000 bytes (96,000 bits) and the Huffman-encoded version uses 38,000 bits, then the compression ratio is approximately 2.53:1.
+
+In real-world systems, Huffman coding is often combined with other methods such as run-length encoding or arithmetic coding for even higher compression efficiency.
